@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Preview de la cámara -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Botón para capturar fotos -->
+    <Button
+        android:id="@+id/image_capture_button"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:elevation="2dp"
+        android:text="@string/take_photo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vertical_centerline" />
+
+    <!-- Botón para capturar videos -->
+    <Button
+        android:id="@+id/video_capture_button"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="50dp"
+        android:elevation="2dp"
+        android:text="@string/start_capture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vertical_centerline" />
+
+    <!-- Botón para seleccionar fotos del dispositivo -->
+    <Button
+        android:id="@+id/select_photo_button"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:text="Select Photo"
+        app:layout_constraintBottom_toTopOf="@id/image_capture_button"
+        app:layout_constraintEnd_toStartOf="@id/vertical_centerline"
+        android:elevation="2dp"/>
+
+    <!-- Botón para seleccionar videos del dispositivo -->
+    <Button
+        android:id="@+id/select_video_button"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:text="Select Video"
+        app:layout_constraintBottom_toTopOf="@id/video_capture_button"
+        app:layout_constraintStart_toEndOf="@id/vertical_centerline"
+        android:elevation="2dp"/>
+
+    <!-- ImageView para mostrar la foto seleccionada -->
+    <ImageView
+        android:id="@+id/selectedImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="Selected Image"/>
+
+    <!-- Línea guía vertical -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_centerline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".50" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
